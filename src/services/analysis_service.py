@@ -94,6 +94,9 @@ class AnalysisService:
             logger.info(f"Analysis completed for customer {customer_id}")
             return response
             
+        except FileNotFoundError:
+            # Re-raise FileNotFoundError so API can return 404
+            raise
         except Exception as e:
             logger.error(f"Analysis failed for customer {customer_id}: {e}")
             
@@ -105,7 +108,8 @@ class AnalysisService:
         try:
             return self.data_service.get_customer_data(customer_id)
         except FileNotFoundError:
-            raise Exception(f"Customer {customer_id} not found in database")
+            # Re-raise FileNotFoundError so API can return 404
+            raise FileNotFoundError(f"Customer {customer_id} not found")
         except Exception as e:
             raise Exception(f"Failed to retrieve customer data: {str(e)}")
     

@@ -361,6 +361,13 @@
                 
                 if (!response.ok) {
                     const error = await response.json();
+                    
+                    // Handle customer not found specifically
+                    if (response.status === 404) {
+                        addBotMessage(`⚠️ Customer ID "${customerId}" not found in our database. Please verify the Customer ID and try again.`, 'error-message');
+                        return; // Don't proceed with analysis display
+                    }
+                    
                     throw new Error(error.detail || 'Analysis failed');
                 }
                 
@@ -369,7 +376,10 @@
                 
             } catch (error) {
                 console.error('Analysis error:', error);
-                addBotMessage(`Analysis failed: ${error.message}`, 'error-message');
+                // Only show generic error message for non-404 errors
+                if (!error.message.includes('not found')) {
+                    addBotMessage(`Analysis failed: ${error.message}`, 'error-message');
+                }
             } finally {
                 // Reset state
                 isAnalyzing = false;
