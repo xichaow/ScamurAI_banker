@@ -1,0 +1,14 @@
+# GitHub language detection override
+*.py linguist-language=Python
+*.html linguist-language=HTML
+*.css linguist-language=CSS  
+*.js linguist-language=JavaScript
+*.md linguist-documentation
+
+# Ignore virtual environment files in language stats
+venv_linux/* linguist-vendored
+__pycache__/* linguist-generated
+*.pyc linguist-generated
+
+# Mark as Python project
+* linguist-language=Python

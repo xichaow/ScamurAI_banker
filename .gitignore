@@ -125,3 +125,8 @@ cython_debug/
 *password*
 *.pem
 *.key
+
+# Development and internal folders (not for public repo)
+.claude/
+PRPs/
+tests/
