@@ -130,6 +130,7 @@ cython_debug/
 .claude/
 PRPs/
 tests/
+example/
 
 # Internal project files (not for public repo)
 CLAUDE.md
