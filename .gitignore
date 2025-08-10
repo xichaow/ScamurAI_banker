@@ -35,11 +35,11 @@ share/python-wheels/
 MANIFEST
 
 # Data files (potentially containing sensitive customer information)
-data/
-*.xlsx
-*.xls
-*.csv
-fraud_data.*
+# data/ - temporarily removed for demo deployment
+# *.xlsx - temporarily removed for demo deployment  
+# *.xls
+# *.csv
+# fraud_data.* - temporarily removed for demo deployment
 
 # Logs and temporary files
 *.log
