@@ -18,5 +18,5 @@ NAB's AI-powered smart agent ScamurAI™ guides colleagues through real-time sca
 2. Review AI-generated fraud analysis
 3. Use the 5 professional questions for customer calls
 
-## 📊 Sample Customer IDs
+## 📊 Sample Dummy Customer IDs
 Try: `28736393`, `23039203`, `C12345`, `C54321`, `C99999`
